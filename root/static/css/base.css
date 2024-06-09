@@ -21,9 +21,13 @@
 
 /* Success message */
 .success {
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
+    margin-top:-1%;
+    position: sticky;
+    z-index: 10;
+    color:white;
+    font-weight: bold;
+    background-color: #43c90ed7;
+    border: 5px solid red;
 }
 
 /* Error message */
