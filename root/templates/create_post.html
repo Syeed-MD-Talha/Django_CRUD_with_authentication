@@ -1,5 +1,27 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
+
+{% block style %}
+<title>Create Post</title>
+<link rel="stylesheet" href='{% static "css/post.css" %}'>
+{% endblock style %}
+
+{% block content %}
+<div class="post-container">
+    <h1>Create a New Post</h1>
+    <form  class="post-form" method="POST" action="" >
+        {% csrf_token %}
+        {{form.title}}
+        {{form.content}}
+        {{form.author}}
+        {{form.published_date}}
+        <button type="submit">Save</button>
+    </form>
+</div>
+<script src='{% static "js/post.js" %}'></script>
+
+{% endblock content %}
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,4 +43,4 @@
     </div>
     <script src='{% static "js/post.js" %}'></script>
 </body>
-</html>
+</html> -->

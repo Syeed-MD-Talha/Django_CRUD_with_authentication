@@ -1,0 +1,26 @@
+/* Container for messages */
+.messages {
+    margin: 20px 0;
+}
+
+/* General style for all messages */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+/* Success message */
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+/* Error message */
+.alert-error {
+    color: rgba(255, 0, 0, 0.826);
+    background-color: rgba(167, 40, 40, 0.113);
+    border-color:red;
+}

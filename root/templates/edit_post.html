@@ -1,12 +1,12 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Post</title>
-    <link rel="stylesheet" href='{% static "css/post.css" %}'>
-</head>
+
+{% block style %}
+<title>Edit Post</title>
+<link rel="stylesheet" href='{% static "css/post.css" %}'>
+{% endblock style %}
+
+{% block content %}
 <body style="background-color: cyan;">
     <div class="post-container" style="background-color: rgba(229, 8, 107, 0.788);">
         <h2>{% if id %} Edit {% else %} New {% endif %} Post</h2>
@@ -19,4 +19,5 @@
     
     
 </body>
-</html>
+{% endblock content %}
+

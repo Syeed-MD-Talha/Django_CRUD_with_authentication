@@ -20,12 +20,12 @@ def PostCreate(request):
             info.save()
             return redirect('../')
         else:
-            return render(request,'post.html',{'form':info})
+            return render(request,'create_post.html',{'form':info})
         
     else:
         print("=================  GET =================")
         context=PostForm()
-        return render(request,'post.html',{'form':context})
+        return render(request,'create_post.html',{'form':context})
 
 
 #................... Edit Post .................................

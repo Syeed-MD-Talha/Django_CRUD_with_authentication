@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<title>Sign Up/Login</title>
+<link rel="stylesheet" href='{% static "css/contact.css" %}'>
+
+
+<div class="container">
+    <div class="form-container">
+        <form id="loginForm" class="form" method="POST">
+            {% csrf_token %}
+            <h2>Login</h2>
+            {{login.username}}
+            {{login.password}}
+            <button type="submit">Login</button>
+            <p class="message">Not registered? <a href="#" id="showSignup">Create an account</a></p>
+        </form>
+        <form id="signupForm" class="form hidden">
+            <h2>Signup</h2>
+            <input type="text" placeholder="Username" id="signupUsername" required>
+            <input type="email" placeholder="Email" id="signupEmail" required>
+            <input type="password" placeholder="Password" id="signupPassword" required>
+            <button type="submit">Signup</button>
+            <p class="message">Already registered? <a href="#" id="showLogin">Sign In</a></p>
+        </form>
+    </div>
+</div>
+
+
+<script src='{% static "js/contact.js" %}'></script>
+
+{% endblock content %}
+
