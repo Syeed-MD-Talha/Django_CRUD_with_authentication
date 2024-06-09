@@ -12,6 +12,10 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    word-wrap: break-word;
+}
+.post-container{
+    margin-top: 5%;
 }
 
 .post {
@@ -42,7 +46,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
 }
-a{
+.CRUD a{
     text-decoration: none;
     border: 1px solid black;
     padding: 10px;

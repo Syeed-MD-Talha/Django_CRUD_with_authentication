@@ -1,15 +1,19 @@
 from django.shortcuts import render, redirect
 from .forms import LoginForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login,logout, authenticate
 from django.contrib import messages
 
 def log_in(request):
     if request.method == 'GET':
+        if request.user.is_authenticated:  # if already login then no need to be in the login page
+            return redirect('view_post')
+
         form = LoginForm()
         return render(request, 'login-signup.html', {'login': form})
     
     elif request.method == 'POST':
         info = LoginForm(request.POST)
+        
         if info.is_valid():
             username = info.cleaned_data['username']
             password = info.cleaned_data['password']
@@ -21,3 +25,12 @@ def log_in(request):
         
         messages.error(request, 'Invalid username or password')
         return render(request, 'login-signup.html', {'login': info})
+    
+
+
+
+
+def log_out(request):
+    logout(request)
+    messages.info(request,f'You have been logged out.')
+    return redirect('login_page')

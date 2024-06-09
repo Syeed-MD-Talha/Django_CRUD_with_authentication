@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 
 
 # ......................List of posts...................
@@ -11,6 +12,7 @@ def PostView(request):
 
 
 #.......................... Create new post.............................
+#@login_required
 def PostCreate(request):
     if request.method=='POST':
         print("================= POST ====================")

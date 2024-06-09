@@ -10,7 +10,7 @@
   <div class="post">
       <h1>There is no post</h1>
       <div class="CRUD">
-          <p><a id="create" href="{% url 'create_post'%}">Create Post</a></p>
+          <p><a href="{% url 'create_post'%}">Create Post</a></p>
       </div>
   </div>
 </div>
@@ -18,6 +18,7 @@
 {% endif %}
 
 
+<div class="post-container">
 {% for post in posts %}
 <div class="container">
   <div class="post">
@@ -26,60 +27,22 @@
       <div id="post-content">
           <p>{{post.content}}</p>
       </div>
+
       
+       {% if request.user.is_authenticated  %}
       <div class="CRUD">
-          <p><a id="edit" href="{% url 'edit_post' post.id %}">Edit Post</a></p>
-          <p><a id="create" href="{% url 'create_post'%}">Create Post</a></p>
-          <p><a id="delete" href="{% url 'delete_post' post.id %}">Delete Post</a></p>
+        <p><a id="edit" href="{% url 'edit_post' post.id %}">Edit Post</a></p>
+        <p><a id="create" href="{% url 'create_post'%}">Create Post</a></p>
+        <p><a id="delete" href="{% url 'delete_post' post.id %}">Delete Post</a></p>
       </div>
+      {% endif %} 
+      
   </div>
 </div>
 
 {% endfor %}
+</div>
 
 {% endblock content %}
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post Cards</title>
-    <link rel="stylesheet" href="{% static 'css/post_view.css' %}">
-</head>
-<body>
-    {% if not posts %}
-      <div class="container">
-        <div class="post">
-            <h1>There is no post</h1>
-            <div class="CRUD">
-                <p><a id="create" href="{% url 'create_post'%}">Create Post</a></p>
-            </div>
-        </div>
-      </div>
-      
-    {% endif %}
 
-
-
-
-    {% for post in posts %}
-    <div class="container">
-        <div class="post">
-            <h1 id="post-title">{{post.title}}</h1>
-            <p class="post-meta">By <span id="post-author">{{post.author}}</span> on <span id="post-date">{{post.published_date}}</span></p>
-            <div id="post-content">
-                <p>{{post.content}}</p>
-            </div>
-            
-            <div class="CRUD">
-                <p><a id="edit" href="{% url 'edit_post' post.id %}">Edit Post</a></p>
-                <p><a id="create" href="{% url 'create_post'%}">Create Post</a></p>
-                <p><a id="delete" href="{% url 'delete_post' post.id %}">Delete Post</a></p>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-    
-</body>
-</html> -->

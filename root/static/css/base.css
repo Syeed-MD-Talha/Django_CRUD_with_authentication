@@ -11,16 +11,57 @@
     border-radius: 4px;
 }
 
+/* Info message */
+
+.info{
+    color: blue;
+    background-color: #1d76ba;
+    border-color: #4f21d0;
+}
+
 /* Success message */
-.alert-success {
+.success {
     color: #3c763d;
     background-color: #dff0d8;
     border-color: #d6e9c6;
 }
 
 /* Error message */
-.alert-error {
+.error {
     color: rgba(255, 0, 0, 0.826);
     background-color: rgba(167, 40, 40, 0.113);
     border-color:red;
 }
+
+
+
+.navBar{
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    right:2px;
+    background-color: deepskyblue;
+    width: 100%;
+    text-align: right;
+    height: 60px;
+}
+
+.links{
+    /* background-color: rgba(255, 255, 255, 0.415); */
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    justify-content: space-between;
+}
+.links a{
+    margin-left: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+.links a:hover{background-color: tomato;}
+
+#greetings{color:rgb(169, 7, 7);font-weight: bold;}
